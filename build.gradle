@@ -28,6 +28,10 @@ dependencies {
     compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.30'
     compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.30'
 
+    //SENTRY_REQUIREMENTS
+    compile group: 'io.sentry', name: 'sentry', version: '1.7.30'
+    compile group: 'io.sentry', name: 'sentry-log4j2', version: '1.7.30'
+
     providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
 }
 
