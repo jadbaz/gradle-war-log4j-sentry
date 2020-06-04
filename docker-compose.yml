@@ -1,0 +1,14 @@
+version: "3.2"
+services:
+  webapp:
+    env_file:
+    - .env
+    ports:
+    - 8080:8080
+    - 9090:9090
+    build:
+      context: .
+      args:
+        SENTRY_DSN: ${SENTRY_DSN} 
+        SENTRY_RELEASE: ${SENTRY_RELEASE}
+    command: ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0", "-Dsentry.dsn=${SENTRY_DSN}", "-Dsentry.release=${SENTRY_RELEASE}"]
